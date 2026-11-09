@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir Salon Cantika</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🌸 Salon Cantika</h1>
+    <p>Aplikasi Kasir Salon Kecantikan</p>
+</header>
+
+<main>
+    <section class="card">
+        <h2>Data Pelanggan</h2>
+        <input type="text" id="customerName"
+               placeholder="Masukkan nama pelanggan">
+    </section>
+
+    <section class="card">
+        <h2>Daftar Layanan</h2>
+        <div id="serviceList" class="service-list"></div>
+    </section>
+
+    <section class="card">
+        <h2>Pesanan</h2>
+        <div id="orderList"></div>
+
+        <label for="discount">Diskon (%)</label>
+        <input type="number" id="discount" value="0" min="0" max="100">
+
+        <p>Subtotal: <b id="subtotal">Rp0</b></p>
+        <p>Potongan: <b id="discountAmount">Rp0</b></p>
+        <h3>Total: <span id="total">Rp0</span></h3>
+    </section>
+
+    <section class="card">
+        <h2>Pembayaran</h2>
+
+        <label for="cashReceived">Uang Diterima</label>
+        <input type="text" id="cashReceived"
+               placeholder="Contoh: 150.000"
+               inputmode="numeric">
+
+        <p>Kembalian: <b id="change">Rp0</b></p>
+
+        <button id="checkoutBtn">Bayar Sekarang</button>
+        <button id="resetBtn" class="secondary">Reset Pesanan</button>
+
+        <p id="paymentMessage"></p>
+    </section>
+
+    <section class="card">
+        <h2>🧾 Struk Pembayaran</h2>
+
+        <button id="viewReceiptBtn">Lihat Struk Terakhir</button>
+
+        <div id="receiptArea" hidden>
+            <h3>Struk Salon Cantika</h3>
+            <p>Kamu bisa mengedit tulisan struk di bawah ini.</p>
+
+            <textarea id="receiptEditor" rows="16"></textarea>
+
+            <div class="button-group">
+                <button id="saveReceiptBtn">Simpan Perubahan</button>
+                <button id="downloadReceiptBtn">Download Struk</button>
+                <button id="deleteReceiptBtn" class="danger">
+                    Hapus Isi Struk
+                </button>
+            </div>
+
+            <p id="receiptMessage"></p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>📋 Riwayat Transaksi</h2>
+        <p class="info">
+            Riwayat tetap tersimpan meskipun halaman di-refresh.
+        </p>
+
+        <div id="historyList">
+            <p>Belum ada riwayat transaksi.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Salon Cantika</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
